@@ -3,11 +3,12 @@
 # Setup my Mac's basic dev environment. Clear and concise.
 set -e
 
-echo "Root, please."
+echo "Root, please!"
 sudo -v
 
 # Setup developer tools
 xcode-select --install
+read -n 1 -p "Press any key when developer tools have been installed..." 
 
 # Install Docker from Mac
 open https://docs.docker.com/docker-for-mac/install/
