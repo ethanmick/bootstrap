@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Setup my Mac's basic dev environment
-# clear and concise.
+# Setup my Mac's basic dev environment. Clear and concise.
+set -e
+
+echo "Root, please."
+sudo -v
 
 # Setup developer tools
 xcode-select --install
@@ -18,10 +21,10 @@ fi
 echo "Docker install finished, continuing..."
 
 # Install Homebrew
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Packages
 brew install \
