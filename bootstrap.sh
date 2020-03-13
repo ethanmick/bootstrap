@@ -24,8 +24,9 @@ echo "Docker install finished, continuing..."
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-# Install oh-my-zsh
-/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Make some default directories
+mkdir ~/go
+mkdir ~/.vim
 
 # Install Packages
 brew install \
@@ -37,6 +38,7 @@ brew install \
   kubectl \
   maven \
   nvm \
+  pipx \
   prettier \
   stow \
   the_silver_searcher \
@@ -46,12 +48,13 @@ brew install \
   watch \
   yarn
 
-# Python Environment
-/usr/local/bin/pip3 install --user virtualenv
-virtualenv .pyenv
+# Setup Vundle for vim, once we install it.
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
-# Make some default directories
-mkdir ~/go
+# Python Environment
+pipx install virtualenv
+virtualenv .pyenv
 
 # Install dotfiles
 git clone git@github.com:ethanmick/dotfiles.git ~/.dotfiles && \
@@ -59,3 +62,8 @@ git clone git@github.com:ethanmick/dotfiles.git ~/.dotfiles && \
   stow . && \
   stow .
 
+# Install oh-my-zsh
+/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# And done
+exit
