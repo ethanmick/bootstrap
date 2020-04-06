@@ -26,7 +26,7 @@ echo "Docker install finished, continuing..."
 
 # Make some default directories
 mkdir ~/go
-mkdir ~/.vim
+mkdir -p ~/.vim/tmp
 
 # Install Packages
 brew install \
