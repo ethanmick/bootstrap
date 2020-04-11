@@ -63,6 +63,9 @@ git clone git@github.com:ethanmick/dotfiles.git ~/.dotfiles && \
   stow . && \
   stow .
 
+# Configure the newly installed global gitignore
+git config --global core.excludesfile '~/.gitignore'
+
 # Install oh-my-zsh
 /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
