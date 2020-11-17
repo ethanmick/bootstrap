@@ -33,7 +33,6 @@ brew install \
   awscli \
   fzf \
   go \
-  gpg \
   imagemagick \
   jq \
   kubectl \
