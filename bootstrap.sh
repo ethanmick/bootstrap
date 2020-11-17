@@ -21,6 +21,10 @@ if [ $? -ne 0 ]; then
 fi
 echo "Docker install finished, continuing..."
 
+# Install GPG
+open https://gpgtools.org/
+read -n 1 -p "Press any key when done..."
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
