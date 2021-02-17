@@ -36,7 +36,6 @@ brew install \
   imagemagick \
   jq \
   kubectl \
-  maven \
   nvm \
   pipx \
   prettier \
